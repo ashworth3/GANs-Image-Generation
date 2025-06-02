@@ -48,6 +48,18 @@ The two models train adversarially, improving each other over time. In this proj
     - Modify truncation values or generate and save multiple images.
     - Save images using PIL.
 
+## Preview Generated Faces
+
+Here are sample images generated using the pretrained StyleGAN2-ADA model:
+
+<p align="center">
+  <img src="face_1.png" width="150" alt="Face 1"/>
+  <img src="face_2.png" width="150" alt="Face 2"/>
+  <img src="face_3.png" width="150" alt="Face 3"/>
+  <img src="face_4.png" width="150" alt="Face 4"/>
+  <img src="face_5.png" width="150" alt="Face 5"/>
+</p>
+
 ## Reflection Report
 
 - Introduction to GANs
