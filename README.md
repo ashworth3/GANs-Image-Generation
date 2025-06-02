@@ -1,6 +1,6 @@
-# GAN Image Generation with BigGAN
+# GAN Image Generation with StyleGAN2-ADA
 
-This project explores how Generative Adversarial Networks (GANs), using BigGAN, can generate realistic images from random noise using a pretrained model.
+This project explores how Generative Adversarial Networks (GANs), using **StyleGAN2-ADA**, can generate realistic images from random noise using a pretrained model trained on the FFHQ (Flickr-Faces-HQ) dataset.
 
 ## Objective
 
@@ -20,28 +20,36 @@ The two models train adversarially, improving each other over time. In this proj
 
 - Python
 - PyTorch
-- Hugging Face Transformers
 - Google Colab / Jupyter Notebook
-- `torch`, `torchvision`, `transformers`, `matplotlib`, `PIL`
+- `torch`, `matplotlib`, `PIL`, `dnnlib`, `legacy`
 
 ## How to Run
 
-1. **Install required libraries**:
+1. **Clone and install required libraries**:
     ```bash
-    pip install torch torchvision matplotlib transformers
+    git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
+    cd stylegan2-ada-pytorch
+    pip install -r requirements.txt
+    pip install ninja
     ```
 
-2. **Run the notebook** (`gan_image_generation.ipynb`):
+2. **Download the pretrained model**:
+    ```bash
+    wget https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
+    ```
+
+3. **Run the notebook** (`gan_image_generation.ipynb`):
     - Open in Jupyter or Google Colab.
-    - Generate images using random latent vectors.
-    - Experiment using different seeds or truncation values.
+    - Generate images using random 512-dimensional latent vectors.
+    - Experiment with different seeds or truncation values.
 
-3. **Customize**:
+4. **Customize**:
     - Adjust the latent vector.
-    - Modify class vectors or truncation values.
-    - Generate and save new images.
+    - Modify truncation values or generate and save multiple images.
+    - Save images using PIL.
 
-## Report
+## Reflection Report
+
 - Introduction to GANs
 - Summary of the experiment
 - Observations on image quality and variation
@@ -49,5 +57,6 @@ The two models train adversarially, improving each other over time. In this proj
 
 ## Deliverables
 
-- Jupyter Notebook (`.ipynb`)
-- Reflection Report
+- Jupyter Notebook (`gan_image_generation.ipynb`)
+- Reflection Report (`GANs Reflection.pdf`)
+- Generated images (`face_1.png`, `face_2.png`, etc.)
